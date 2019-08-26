@@ -112,4 +112,17 @@ export default [
     description: 'Path to the CLI configuration file',
     parse: (val: string) => path.resolve(val),
   },
+  {
+    command: '--split-ram-bundle',
+    description: 'XPENG_BUILD_SPLIT_BUNDLE: Split the "Indexed RAM" bundle file into multiple small files, only availale if --indexed-ram-bundle is true',
+    default: false
+  },{
+    command: '--remove-entry',
+    description: 'XPENG_BUILD_SPLIT_BUNDLE: Remove the entry module in the "Indexed RAM" bundle file, only available if --split-ram-bundle is true',
+    default: false
+  },{
+    command: '--reset-module-id',
+    description: 'XPENG_BUILD_SPLIT_BUNDLE: Reset the module id, only available if --split-ram-bundle is true',
+    default: false
+  }
 ];

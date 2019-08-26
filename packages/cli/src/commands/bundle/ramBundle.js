@@ -15,6 +15,22 @@ import bundleCommandLineArgs from './bundleCommandLineArgs';
  * Builds the bundle starting to look for dependencies at the given entry path.
  */
 function ramBundle(argv, config, args) {
+  /*XPENG_BUILD_SPLIT_BUNDLE*/
+  if (args.splitRamBundle && args.indexedRamBundle) {
+    const _path = require('path');
+    const _require = require("metro-config/src/xpeng/runtimeConfig"),
+      setOutputPath = _require.setOutputPath,
+      setSplitRamBundle = _require.setSplitRamBundle;
+
+    if (setOutputPath != undefined) {
+      setOutputPath(_path.resolve(args.bundleOutput));
+    }
+    if (setSplitRamBundle != undefined) {
+      setSplitRamBundle(args.splitRamBundle);
+    }
+  }
+  /*XPENG_BUILD_SPLIT_BUNDLE*/
+
   return bundleWithOutput(argv, config, args, outputUnbundle);
 }
 

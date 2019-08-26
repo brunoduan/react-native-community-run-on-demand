@@ -64,6 +64,16 @@ async function buildBundle(
     platform: args.platform,
   };
 
+  /* XPENG_BUILD_SPLIT_BUNDLE*/
+  Object.assign(requestOpts, requestOpts, {
+    bundleOutput: args.bundleOutput,
+    splitRamBundle: args.splitRamBundle,
+    indexedRamBundle: args.indexedRamBundle,
+    removeEntry: args.removeEntry,
+    resetModuleId: args.resetModuleId
+  });
+  /* XPENG_BUILD_SPLIT_BUNDLE*/
+
   const server = new Server(config);
 
   try {
