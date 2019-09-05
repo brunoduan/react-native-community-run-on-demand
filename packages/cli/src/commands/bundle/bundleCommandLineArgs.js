@@ -113,15 +113,15 @@ export default [
     parse: (val: string) => path.resolve(val),
   },
   {
-    command: '--split-ram-bundle',
+    command: '--split-ram-bundle [boolean]',
     description: 'XPENG_BUILD_SPLIT_BUNDLE: Split the "Indexed RAM" bundle file into multiple small files, only availale if --indexed-ram-bundle is true',
     default: false
   },{
-    command: '--remove-entry',
+    command: '--remove-entry [boolean]',
     description: 'XPENG_BUILD_SPLIT_BUNDLE: Remove the entry module in the "Indexed RAM" bundle file, only available if --split-ram-bundle is true',
     default: false
   },{
-    command: '--reset-module-id',
+    command: '--reset-module-id [boolean]',
     description: 'XPENG_BUILD_SPLIT_BUNDLE: Reset the module id, only available if --split-ram-bundle is true',
     default: false
   }
